@@ -1,8 +1,10 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI, HTTPException, Header
 from db import get_connection
 from models import PRMergedEvent, ReviewSubmittedEvent
-
 app = FastAPI()
 
 API_KEY = os.environ["LEADERBOARD_API_KEY"]
